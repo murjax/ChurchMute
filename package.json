@@ -10,6 +10,7 @@
     "react": "16.3.1",
     "react-native": "0.55.1",
     "react-native-checkbox": "^2.0.0",
+    "react-native-google-places": "^2.5.0",
     "react-native-system-setting": "^1.2.4"
   },
   "devDependencies": {
