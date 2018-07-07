@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import { globalStyles } from './styles/global_styles.js';
 import CheckBox from 'react-native-checkbox';
 import SystemSetting from 'react-native-system-setting'
 import RNGooglePlaces from 'react-native-google-places'
@@ -13,12 +14,12 @@ export default class App extends Component<Props> {
   }
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.heading}>
-          <Text style={styles.title}>ChurchMuter</Text>
+      <View style={globalStyles.container}>
+        <View style={globalStyles.heading}>
+          <Text style={globalStyles.title}>ChurchMuter</Text>
         </View>
 
-        <View style={styles.form}>
+        <View style={globalStyles.form}>
           <Button title="Mute Me" color="#4286f4" onPress={() => this.mute()} />
           <Button title="Search" color="#4286f4" onPress={() => this.getCurrentPlace()} />
         </View>
@@ -48,18 +49,3 @@ export default class App extends Component<Props> {
     });
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-  },
-  heading: {
-    marginTop: 40
-  },
-  title: {
-    fontSize: 25,
-    fontWeight: 'bold'
-  }
-});
