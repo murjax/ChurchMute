@@ -19,16 +19,6 @@ export default class App extends Component<Props> {
         </View>
 
         <View style={styles.form}>
-          <Text>Select types of locations to mute at</Text>
-          <CheckBox
-            label='Church'
-          />
-          <CheckBox
-            label='Library'
-          />
-          <CheckBox
-            label='School'
-          />
           <Button title="Mute Me" color="#4286f4" onPress={() => this.mute()} />
           <Button title="Search" color="#4286f4" onPress={() => this.getCurrentPlace()} />
         </View>
