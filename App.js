@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, View, Button } from 'react-native';
 import { globalStyles } from './styles/global_styles.js';
 import Options from './components/Options.js'
-
-const LocationListener = async (data) => {
-  console.log('here');
-}
+import LocationListener from './components/LocationListener.js';
 
 AppRegistry.registerHeadlessTask('LocationListener', () => LocationListener);
 
