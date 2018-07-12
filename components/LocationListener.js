@@ -2,7 +2,7 @@ import SystemSetting from 'react-native-system-setting'
 import RNGooglePlaces from 'react-native-google-places'
 
 module.exports = async (taskData) => {
-  getCurrentPlace();
+  await getCurrentPlace();
 };
 
 const getCurrentPlace = () => {
@@ -12,7 +12,9 @@ const getCurrentPlace = () => {
         result.types.map((type) =>{
           console.log(type)
           if(type == 'church'){
-            this.mute()
+            mute();
+          }else{
+            unmute();
           }
         })
       })
@@ -24,5 +26,13 @@ const mute = () => {
   SystemSetting.setVolume(0, {type: 'ring', playSound: false, showUI: false});
   SystemSetting.getVolume('ring').then((volume)=>{
     console.log('Current volume is ' + volume);
+  });
+}
+
+const unmute = () => {
+  SystemSetting.getVolume('ring').then((volume)=>{
+    if(volume == 0){
+      SystemSetting.setVolume(70, {type: 'ring', playSound: false, showUI: false});
+    }
   });
 }
